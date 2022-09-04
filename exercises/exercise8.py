@@ -25,6 +25,12 @@ def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
 
 
 # NO MODIFICAR - INICIO
+def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
+    tupla = ()
+    for i in range(len(nombres)):
+        tupla += (nombres[i], precios[i]),
+    return tupla
+
 respuesta = (
     ("ventana", 100.48),
     ("lámpara", 16.42),
@@ -54,6 +60,12 @@ def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int])
 
 
 # NO MODIFICAR - INICIO
+def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int]) -> Tuple[Any]:
+    tupla = ()
+    for i in list(enumerate(nombres)):
+        tupla += (nombres[i[0]], precios[i[0]], ids[i[0]]),
+    return tupla
+
 respuesta = (
     ("ventana", 100.48, 6852),
     ("lámpara", 16.42, 1459),
@@ -83,6 +95,9 @@ def combinar_zip(nombres: List[str], precios: List[float], ids: List[int]) -> Tu
 
 
 # NO MODIFICAR - INICIO
+def combinar_zip(nombres: List[str], precios: List[float], ids: List[int]) -> Tuple[Any]:
+    return tuple(zip(nombres, precios, ids))
+
 respuesta = (
     ("ventana", 100.48, 6852),
     ("lámpara", 16.42, 1459),
@@ -115,6 +130,9 @@ def combinar_zip_args(*args) -> Tuple[Any]:
 
 
 # NO MODIFICAR - INICIO
+def combinar_zip_args(*args) -> Tuple[Any]:
+    return tuple(zip(*args))
+
 respuesta = (
     ("ventana", 100.48, 6852, "hogar", True),
     ("lámpara", 16.42, 1459, "libreria", False),

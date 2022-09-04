@@ -14,6 +14,13 @@ def maximo_recursivo(*args) -> float:
 
 
 # NO MODIFICAR - INICIO
+def maximo_recursivo(*args) -> float:
+    maximo_valor = None
+    for i in args:
+        if (maximo_valor is None or i > maximo_valor):
+            maximo_valor = i
+    return maximo_valor
+
 if __name__ == "__main__":
     assert maximo_recursivo(1, 10, 5, -5) == 10
     assert maximo_recursivo(4, 9, 18, 6) == 18
@@ -37,6 +44,10 @@ def sumatoria_reduce(n: int) -> int:
 
 
 # NO MODIFICAR - INICIO
+def sumatoria_reduce(n: int) -> int:
+    listaNum = [i for i in range(n+1)]
+    return reduce(lambda x, y: x+y, listaNum)
+
 if __name__ == "__main__":
     assert sumatoria_reduce(1) == 1
     assert sumatoria_reduce(100) == 5050
@@ -59,5 +70,8 @@ def numeros_al_final_sorted(lista: List[Union[float, str]]) -> List[Union[float,
 
 
 # NO MODIFICAR - INICIO
+def numeros_al_final_sorted(lista: List[Union[float, str]]) -> List[Union[float, str]]:
+    return sorted(lista, key = lambda a: type(a) != str)
+
 assert numeros_al_final_sorted([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 1, 10]  # noqa: E501
 # NO MODIFICAR - FIN
